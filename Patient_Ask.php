@@ -1,12 +1,22 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/xml; charset=big5">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Patient Select Webpage</title>
+
+<?php 
+
+$zipFile = $_GET['zipFile'];
+echo $_GET['zipFile']."<br>";
+echo $zipFile;
+
+?>
+
+
 </head>
 
 <body>
 	<form name="form1" method="post" enctype="multipart/form-data"
-		action="Patient_List.php">
+		action="Waveform_Response.php">
 
 		<p>
 		
@@ -32,7 +42,8 @@
 
 
 			<p>
-				File's Date ： <input type="text" name="udate">
+				File's Date ： <input name="udate"
+					value="<?php echo $zipFile;?>">
 			</p>
 
 
@@ -64,14 +75,16 @@
 			</p>
 
 
-
-
+			<p>
+				<input type="submit" name="Submit" value="Ask Waveform"> <input
+					type="reset" name="Reset" id="Reset" value="reset">
+			</p>
 
 
 			<p>
-				<input type="submit" name="Submit" value="Patirnt_List"> <input
-					type="reset" name="Reset" id="Reset" value="reset">
+				<input type="radio" name=utest value=1234><label>QQ</label>
 			</p>
+
 
 
 		</center>
