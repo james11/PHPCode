@@ -99,6 +99,7 @@
 
 		if(!file_exists("/Applications/MAMP/htdocs/phpBB3/SavedData/$fid")){
 			mkdir ("/Applications/MAMP/htdocs/phpBB3/SavedData/$fid" , 0777);
+			$last_line = system("cp -r Select_File.php ../../SavedData/$fid");
 		}
 
 

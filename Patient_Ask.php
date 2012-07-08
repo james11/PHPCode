@@ -1,17 +1,22 @@
 <html>
+
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Patient Select Webpage</title>
 
-<?php 
+<center>
 
-$zipFile = $_GET['zipFile'];
-echo $_GET['zipFile']."<br>";
-echo $zipFile;
+	<?php 
 
-?>
+	// Receive variable from "Select_ID.php"
+	$zipFile = $_GET['zipFile'];
+	// 	echo $zipFile."<br>";
+	$id = $_GET['id'];
+	// 	echo $id."<br>";
 
+	?>
 
+</center>
 </head>
 
 <body>
@@ -37,19 +42,18 @@ echo $zipFile;
 
 
 			<p>
-				Patient's ID： <input type="text" name="upatientID">
+				Patient ID: <input name="upatientID" value="<?php echo $id;?>">
 			</p>
 
 
 			<p>
-				File's Date ： <input name="udate"
-					value="<?php echo $zipFile;?>">
+				File Date: <input name="udate" value="<?php echo $zipFile;?>">
 			</p>
 
 
 			<p>
-				Start From : <select name="ustarttime" size="1">
-					<option selected value="0">請選擇</option>
+				Start From: <select name="ustarttime" size="1">
+					<option selected value="0">Select</option>
 					<option value="0">head</option>
 					<option value="1">1st</option>
 					<option value="2">2nd</option>
@@ -64,14 +68,14 @@ echo $zipFile;
 			</p>
 
 			<p>
-				Scale : <select name="uscale" size="1">
-					<option selected value="0">請選擇</option>
-					<option value="1">1 Sec</option>
-					<option value="5">5 Sec</option>
-					<option value="10">10 Sec</option>
-					<option value="15">15 Sec</option>
-					<option value="30">30 Sec</option>
-				</select>
+				Scale: <select name="uscale" size="1">
+					<option selected value="0">Select</option>
+					<option value="1">1 </option>
+					<option value="5">5 </option>
+					<option value="10">10 </option>
+					<option value="15">15 </option>
+					<option value="30">30 </option>
+				</select> Second
 			</p>
 
 
