@@ -7,12 +7,8 @@
 
 <?
 // Receive variable from "Select_ID.php"
-echo $_GET['id']."<br>";
-
-if ($_GET['id']) {
-	$id = $_GET['id'];
-	echo $_GET['id']."<br>";
-}
+$id = $_GET['id'];
+// echo $id."<br>";
 
 /** ------------------------------------------------------------------------ **/
 
@@ -50,18 +46,20 @@ echo "<br>";
 echo "<hr>";
 echo "<br>";
 
+/** ---------------------------------------------------------------------- **/
+
+
 $dir = "/Applications/MAMP/htdocs/phpBB3/SavedData/$id";
 
-echo '<html><head><meta http-equiv="Content-Type" ';
-echo 'content="text/html; charset=big5">';
-echo '<title>Testing PHP for hierList</title></head><body>';
 /*
  為了保證所放 index.php 的目錄是根目錄，$path 不可以有 '..' 而前面一定是 './'
 */
 if (($path == "") || (substr_count($path, '..') > 0) ||
 		(substr($path, 0, 2)) != './') $path = './';
 $tmp = substr($path, 1);
-echo "<h3>Index of $tmp </h3>\n<pre>";
+
+echo "<h3>Date File List of Patient ".$id."</h3>\n<pre>";
+
 /*
  讀檔案/目錄列表，放入陣列 $farray/$darray
 */
@@ -109,53 +107,47 @@ if ($didx > 0) {
 	}
 }
 /*
- 列出檔案列表
+ List files
 */
 $fidx = count($farray);
 if ($fidx > 0) {
-	sort($farray); // 排列
+	sort($farray);
 	for ($i = 0; $i < $fidx; $i++) {
-		// 讀檔案的timestamp（時間戳記）
-		$idate = filemtime($farray[$i]);
-		// 將timestamp轉換為date（日期）
-		$sdate = date('Y/m/d', $idate);
-		$fsize = filesize($farray[$i]); // 讀檔案大小
-		if ($fsize < 1024) {
-			printf("%7d B   ", $fsize); // 為byte
-		}
-		else {
-			$fsize = (float) ($fsize / 1024.0);
-			if ($fsize < 1024.0) {
-				printf("%5.1f KB  ", $fsize);  // 為KB
+		if(preg_match(".201.", $farray[$i])){
+			// Read the timestamp of the file
+			$idate = filemtime($farray[$i]);
+			// Transfer timestamp into date
+			$sdate = date('Y/m/d', $idate);
+			$fsize = filesize($farray[$i]); // // Get file size
+			if ($fsize < 1024) {
+				printf("%5d B   ", $fsize); // in byte
 			}
 			else {
-				$fsize /= 1024.0;
+				$fsize = (float) ($fsize / 1024.0);
 				if ($fsize < 1024.0) {
-					printf("%5.1f MB  ", $fsize);  // 為MB
+					printf("%5.1f KB  ", $fsize);  // in KB
 				}
 				else {
 					$fsize /= 1024.0;
-					printf("%5.1f GB  ", $fsize);  // 為GB
+					if ($fsize < 1024.0) {
+						printf("%5.1f MB  ", $fsize);  // in MB
+					}
+					else {
+						$fsize /= 1024.0;
+						printf("%5.1f GB  ", $fsize);  // in GB
+					}
 				}
 			}
+			echo $sdate."   ";
+			$zipFile = substr($farray[$i],0,5);
+			echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Patient_Ask.php?zipFile=$zipFile&id=$id target=_self>$farray[$i]/</a><br>";
 		}
-		echo $sdate;
-		$zipFile = substr($farray[$i],0,5);
-		echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Patient_Ask.php?zipFile=$zipFile&id=$id target=_self>$farray[$i]/</a><br>";
 	}
 }
 
-$baidu = baidu;
-
-echo "<a  href=\"http://140.114.14.54/phpBB3/ECGServer/PHPCode/Patient_Ask.php?i\"id=\"google\" \"target=\"_self\">Patient_Ask/</a><br>";
-
-//Link with valuable sending
-echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Patient_Ask.php?id=$baidu target=_self>Patient_Ask</a><br>";
-
-
 
 echo '</pre><hr><pre><font color="#808080" size="2">';
-echo 'Testing PHP for hierList'."\n";
+echo 'Select File Date to Continue'."\n";
 echo $date.'</font></pre>';
 echo '</body></html>';
 ?>

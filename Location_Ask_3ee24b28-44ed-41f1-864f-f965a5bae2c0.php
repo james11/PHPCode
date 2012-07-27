@@ -24,24 +24,25 @@
 			</font>
 
 
-<!-- 			<p> -->
-<!-- 				Patient ID¡G <input type="text" name="upatientid"> -->
-<!-- 			</p> -->
+			<!-- 			<p> -->
+			<!-- 				Patient ID¡G <input type="text" name="upatientid"> -->
+			<!-- 			</p> -->
 
-<!-- 			<p> -->
-<!-- 				Year¡G <input type="text" name="uyear"> (ex: 2011 or 2012) -->
-<!-- 			</p> -->
+			<!-- 			<p> -->
+			<!-- 				Year¡G <input type="text" name="uyear"> (ex: 2011 or 2012) -->
+			<!-- 			</p> -->
 
 			<p>
 				Patient ID : <select name="upatientid" size="1">
 					<option selected value="0">½Ð¿ï¾Ü</option>
 					<option value="3ee24b28-44ed-41f1-864f-f965a5bae2c0">Tzu-Yu Kuo</option>
 					<option value="f48770bd-c911-4568-af67-96808b7d6729">Ching-Wei Chen</option>
-					<option value="b1dc2c14-b474-4406-9942-efda363c9593">Cheng-Wei Hsiao</option>
+					<option value="b1dc2c14-b474-4406-9942-efda363c9593">Cheng-Wei
+						Hsiao</option>
 					<option value="86e03ff3-3d4b-4a62-86cf-b8529fdf80ff">Kuang-Jer Tam</option>
-<!-- 					<option value="a6d157b5-1e23-4b75-ae60-40334fce2d50">Chun-Chieh Chan</option> -->
-				</select> 
-			</p>	
+					<!-- 					<option value="a6d157b5-1e23-4b75-ae60-40334fce2d50">Chun-Chieh Chan</option> -->
+				</select>
+			</p>
 
 			<p>
 				Location : <select name="udate" size="1" if(uAA==0)>
@@ -49,16 +50,19 @@
 					<option value="201206182344">2012/06/18/23:44</option>
 					<option value="201206182354">2012/06/18/23:54</option>
 					<option value="201206190004">2012/06/19/00:04</option>
-				</select> 
+					<option value="201207291851">2012/07/29/18:51</option>
+					<option value="201207291901">2012/07/29/19:01</option>
+					<option value="201207291911">2012/07/29/19:11</option>
+				</select>
 			</p>
 
-<!-- 			<p> -->
-<!-- 				Date¡G <input type="text" name="udate"> (ex: 0718 or 1123) -->
-<!-- 			</p> -->
+			<!-- 			<p> -->
+			<!-- 				Date¡G <input type="text" name="udate"> (ex: 0718 or 1123) -->
+			<!-- 			</p> -->
 
-<!-- 			<p> -->
-<!-- 				Time¡G <input type="text" name="utime"> (ex: 0723 or 1945) -->
-<!-- 			</p> -->
+			<!-- 			<p> -->
+			<!-- 				Time¡G <input type="text" name="utime"> (ex: 0723 or 1945) -->
+			<!-- 			</p> -->
 
 			<p>
 				<input type="submit" name="Submit" value="Get Location"> <input
