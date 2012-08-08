@@ -141,22 +141,21 @@
 
 			// Commend List for terimal.
 			$command = array(
-					// 0=>"cd /Applications/MAMP/htdocs/phpBB3/SavedData",
-					1=>"mkfile 1k RR.txt",
-					2=>"./findRR.app $fname RR.txt RSample.txt",
-					3=>"cp -r RR.txt ../../SavedData/$fid/$ECGflodername/$RRflodername/$fname",
+					0=>"",
+					1=>"echo $fid > $fid.txt",
+					2=>"findRR $fname $fid.RR.txt $fid.RSample.txt",
+					3=>"cp -r $fid.RR.txt ../../SavedData/$fid/$ECGflodername/$RRflodername/$fname",
+					
+					4=>"",
 
-					4=>"mv ../../SavedData/$fid/RR* ./",
+					5=>"./mse.sh < $fid.txt",
+					6=>"mse < $fid.RRList.txt > $fid.mse.txt",
 
-					5=>"./mse.sh",
-					6=>"./mse.app <RRList.txt >mse.txt",
+					7=>"mv ./$fid.RR* ../../SavedData/$fid/",
 
-					7=>"mv ./RR* ../../SavedData/$fid/",
-
-					8=>"rm -rf $fname",//RRList.txt",
-					// 7=>"mv RR.txt ../../SavedData/$fid/$ECGflodername/$RRflodername/$fname",
-					9=>"mv mse.txt ../../SavedData/$fid/$ECGflodername/$Mseflodername/$fname",
-					10=>"mv RSample.txt ../../SavedData/$fid/$ECGflodername/$RSampleflodername/$fname"
+					8=>"rm -rf $fname $fid.txt",
+					9=>"mv ./$fid.mse.txt ../../SavedData/$fid/$ECGflodername/$Mseflodername/$fname",
+					10=>"mv ./$fid.RSample.txt ../../SavedData/$fid/$ECGflodername/$RSampleflodername/$fname"
 			);
 
 			for($i=0; $i<11; $i++) {

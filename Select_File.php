@@ -139,7 +139,7 @@ if ($fidx > 0) {
 				}
 			}
 			echo $sdate."   ";
-			$zipFile = substr($farray[$i],0,5);
+			$zipFile = substr($farray[$i],0,12);
 			echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Patient_Ask.php?zipFile=$zipFile&id=$id target=_self>$farray[$i]/</a><br>";
 		}
 	}

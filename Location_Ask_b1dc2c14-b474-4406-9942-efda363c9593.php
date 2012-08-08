@@ -55,6 +55,14 @@
 					<option value="201207292230">2012/07/29/22:30</option>
 					<option value="201207292240">2012/07/29/22:40</option>
 					<option value="201207292250">2012/07/29/22:50</option>
+					<option value="201207301715">2012/07/30/17:15</option>
+					<option value="201207301725">2012/07/30/17:25</option>
+					<option value="201207301735">2012/07/30/17:35</option>
+					<option value="201207301745">2012/07/30/17:45</option>
+					<option value="201207301755">2012/07/30/17:55</option>
+					<option value="201207301805">2012/07/30/18:05</option>
+					<option value="201207301815">2012/07/30/18:15</option>
+
 				</select>
 			</p>
 

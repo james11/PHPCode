@@ -1,13 +1,22 @@
+while read fileid
+do
+fid=$fileid
+echo "fid="$fid
+done
+
+mv ../../SavedData/$fid/$fid".RRList.txt" ./
+
+
 i=10
 while [ "$i" != "0" ]
 do
 	j=$(($i))
 	i=$(($i-1))
-	mv "RR"$i".txt" "RR"$j".txt" 
+	mv ../../SavedData/$fid/$fid".RR"$i".txt" $fid".RR"$j".txt"
 	
 done
-mv RR.txt RR1.txt
+mv ./$fid".RR.txt" ./$fid".RR1.txt"
 
-cat RR1.txt RR2.txt RR3.txt RR4.txt RR5.txt RR6.txt RR7.txt RR8.txt RR9.txt RR10.txt > RRList.txt
+cat $fid".RR1.txt" $fid".RR2.txt" $fid".RR3.txt" $fid".RR4.txt" $fid".RR5.txt" $fid".RR6.txt" $fid".RR7.txt" $fid".RR8.txt" $fid".RR9.txt" $fid".RR10.txt" > $fid".RRList.txt"
 
-
+//mv $fid".RR"* ../../SavedData/$fid/
