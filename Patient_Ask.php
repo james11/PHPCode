@@ -29,11 +29,11 @@
 		<center>
 			<p>
 				<img
-					src="http://www.thenewportcreek.com/img/icons/google_maps_icon.png"
-					height="120" width="120"></img>
+					src="http://www.ntuh.gov.tw/_catalogs/masterpage/V2/images/logo1.gif"
+					height="80" width="300"></img>
 			</p>
 
-			<font size=6> <font color=#0000ff> Wellcome </font>
+			<font size=6> <font color=#0000ff> Welcome </font>
 			</font> <font size=6> <font color=#cc0033> to Patient </font>
 			</font> <font size=6> <font color=#ffcc00> Select </font>
 			</font> <font size=6> <font color=#00CC00> Webpage</font>
@@ -70,11 +70,11 @@
 			<p>
 				Scale: <select name="uscale" size="1">
 					<option selected value="0">Select</option>
-					<option value="1">1 </option>
-					<option value="5">5 </option>
-					<option value="10">10 </option>
-					<option value="15">15 </option>
-					<option value="30">30 </option>
+					<option value="1">1</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="30">30</option>
 				</select> Second
 			</p>
 
@@ -85,11 +85,15 @@
 			</p>
 
 
-			<p>
-				<input type="radio" name=utest value=1234><label>QQ</label>
-			</p>
+			<!-- 			<p> -->
+			<!-- 				<input type="radio" name=utest value=1234><label>QQ</label> -->
+			<!-- 			</p> -->
 
-
+			<?php
+			echo "<h3>";
+			echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Select_ID.php? target=_self>\t Back to ID Select Webpage</a>";
+			echo "<br>"."<br>";
+			?>
 
 		</center>
 	</form>

@@ -4,6 +4,19 @@
 <meta http-equiv="Content-Type" content="text/xml; charset=big5">
 <title>Patient Select Webpage</title>
 
+<center>
+
+	<p>
+		<img
+			src="http://www.ntuh.gov.tw/_catalogs/masterpage/V2/images/logo1.gif"
+			height="80" width="300"></img>
+	</p>
+
+	<font size=6> <font color=#0000ff> Please </font>
+	</font> <font size=6> <font color=#cc0033> Select </font>
+	</font> <font size=6> <font color=#ffcc00> an </font>
+	</font> <font size=6> <font color=#00CC00> ID </font>
+	</font>
 
 <?
 // Create two timezone objects,
@@ -25,6 +38,7 @@ $timeOffset = 8 - ($timeOffset / 60 / 60);
 
 
 //echo Time;
+echo "<br>";
 echo "<br>";
 echo 'Now Time (Taiwan) : ';
 $hour = 60 * 60;
@@ -84,7 +98,7 @@ $didx = count($darray);
 if ($didx > 0) {
 	sort($darray); // 排列
 	for ($i = 0; $i < $didx; $i++) {
-		echo "            [";
+		echo "[";
 		if ($darray[$i] == '..') {
 			// 刪除最後的 '/'
 			$tmp = substr($path, 0, strlen($path) - 1);
@@ -144,6 +158,7 @@ echo $date.'</font></pre>';
 echo '</body></html>';
 ?>
 
+</center>
 
 </head>
 

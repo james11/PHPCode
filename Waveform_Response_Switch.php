@@ -2,7 +2,6 @@
 
 <head>
 <title>Waveform Response Webpage</title>
-
 <center>
 
 	<p>
@@ -16,6 +15,7 @@
 	</font> <font size=6> <font color=#ffcc00> Response </font>
 	</font> <font size=6> <font color=#00CC00> Webpage</font>
 	</font>
+
 
 	<?php
 
@@ -58,24 +58,22 @@
 	$green = '#00CC00';
 
 
-	$upatientID = $_POST["upatientID"];
+	$upatientID = $_GET["upatientID"];
 	// echo "Hi doctor "."<font color=$blue>$doctorname</font>".":<p>";
 	// 	echo $upatientID;
 	echo "<br>";
 
-	$udate = $_POST["udate"];
+	$udate = $_GET["udate"];
 	echo $udate;
 	echo "<br>";
 
-	$starttime = $_POST["ustarttime"];
+	$starttime = $_GET["ustarttime"];
 	// 	echo $starttime;
 	if($starttime <= 0) $starttime = 1;
-	else
-		$starttime = $starttime*1920*60;
 	// 	echo "  ".$starttime;
 	echo "<br>";
 
-	$scale = $_POST["uscale"];
+	$scale = $_GET["uscale"];
 	// 	echo $scale;
 	$scale_m = $scale*1920;
 	// 	echo "  ".$scale_m;
@@ -126,7 +124,6 @@
 	echo "...............";
 	echo "<a href=http://140.114.14.54/phpBB3/ECGServer/PHPCode/Waveform_Response_Switch.php?upatientID=$upatientID&udate=$udate&ustarttime=$starttime_next&uscale=$scale target=_self>Next Figure</a>";
 	echo "<br>"."<br>";
-
 
 	?>
 
